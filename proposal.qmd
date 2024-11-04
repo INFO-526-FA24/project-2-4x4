@@ -1,0 +1,19 @@
+---
+title: 
+subtitle: "INFO526: Project 2"
+author: 
+  - name: "4X4"
+    affiliations:
+      - name: "College of Information Science, University of Arizona"
+description: 
+format:
+  html:
+    code-tools: true
+    code-overflow: wrap
+    code-line-numbers: true
+    embed-resources: true
+editor: visual
+code-annotations: hover
+execute:
+  warning: false
+---
