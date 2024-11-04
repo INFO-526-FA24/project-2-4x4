@@ -26,9 +26,9 @@ For Project 2, we want to explore the R package BrailleR. \
 
 BrailleR is an R package that creates text descriptions of visualizations that visually impared users can more easily access via screen-readers than pure visualizations. We want to demonstrate how to use it and how it will be beneficial to users. The reason that we chose this data set is because accessibility and inclusion are important and being able to see a plot is something that a lot of individuals take for granted.
 
-In order to accomplish this, the data that we choose isn't particularly important and we are demonstrating a tool rather than showing trends. **Talk about the dataset(s) we are going to use**.
+In order to accomplish this, the data that we choose isn't particularly important and we are demonstrating a tool rather than showing trends of given data. As a result, we are going to use two different built-in Data sets. The first dataset is going to be Johnson and Johnson to create a time series plot. The second dataset is going to be **something** to create histogram and a regression plot. This will ensure that we have a variety of plots to showcase BrailleR capabilities.
 
-For **this/these** dataset**(s)**, we are going to create three distinct plots each with different features and use BrailleR on the plot to show how it makes the visualization more accessible and what the text description looks like.
+For these datasets, we are going to create three distinct plots each with different features and use BrailleR on the plot to show how it makes the visualization more accessible and what the text description looks like. Depending on how the datasets display the data and the information they provide, we might need to alter the datasets we choose or the type of plots we make.
 
 ## Plan of Attack
 
