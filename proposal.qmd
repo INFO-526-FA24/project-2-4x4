@@ -32,18 +32,17 @@ For these datasets, we are going to create three distinct plots each with differ
 
 ## Plan of Attack
 
-| Task Name | Status      | Assignee | Due  | Priority | Summary                              |
-|-------------|-------|------------|--------|-------|---------------------------|
-| Proposal  | In Progress | Team     | 9/13 | High     | Develop and Create Project Proposal  |
-|           |             |          |      |          |                                      |
-|           |             |          |      |          |                                      |
-|           |             |          |      |          |                                      |
-|           |             |          |      |          |                                      |
-|           |             |          |      |          |                                      |
-|           |             |          |      |          |                                      |
-|           |             |          |      |          |                                      |
-|           |             |          |      |          |                                      |
-|           |             |          |      |          |                                      |
+| Task Name                       | Status      | Assignee                 | Due  | Priority | Summary                                        |
+|-------------|---------------|----------------|--------|--|---------------------------|
+| Proposal                        | In Progress | Kapua w/ input from Team | 9/13 | High     | Develop and Create Project Proposal            |
+| Find dataset 1                  |             | Aditya                   | 9/13 | Mod      | Find dataset for Time Series                   |
+| Find dataset 2                  |             | Tanmay/Krisha            | 9/13 | Mod      | Find dataset for histogram and Regression Plot |
+| Create Time Series Plot         |             | Aditya                   | 9/20 | High     |                                                |
+| Create Histogram Plot           |             | Krisha                   | 9/20 | High     |                                                |
+| Create Regression Plot          |             | Tanmay                   | 9/20 | High     |                                                |
+| Incorporate BrailleR into Plots |             |                          | 9/24 | High     |                                                |
+|                                 |             |                          |      |          |                                                |
+|                                 |             |                          |      |          |                                                |
 
 ## Project Repo
 
