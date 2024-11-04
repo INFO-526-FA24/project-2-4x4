@@ -1,11 +1,11 @@
 ---
-title: 
+title: "BrailleR and Visualizations"
 subtitle: "INFO526: Project 2"
 author: 
   - name: "4X4"
     affiliations:
       - name: "College of Information Science, University of Arizona"
-description: 
+description: "A deep dive into the R Package BrailleR which is a tool that makes visualizations in R more accessible to visually-impared users. The accessible feature is the creatation of a text-description of a given plot."
 format:
   html:
     code-tools: true
@@ -17,3 +17,40 @@ code-annotations: hover
 execute:
   warning: false
 ---
+
+## High Level Goal
+
+For Project 2, we want to explore the R package BrailleR. \
+
+## Description of Goals
+
+BrailleR is an R package that creates text descriptions of visualizations that visually impared users can more easily access via screen-readers than pure visualizations. We want to demonstrate how to use it and how it will be beneficial to users. The reason that we chose this data set is because accessibility and inclusion are important and being able to see a plot is something that a lot of individuals take for granted.
+
+In order to accomplish this, the data that we choose isn't particularly important and we are demonstrating a tool rather than showing trends. **Talk about the dataset(s) we are going to use**.
+
+For **this/these** dataset**(s)**, we are going to create three distinct plots each with different features and use BrailleR on the plot to show how it makes the visualization more accessible and what the text description looks like.
+
+## Plan of Attack
+
+| Task Name | Status      | Assignee | Due  | Priority | Summary                              |
+|-------------|-------|------------|--------|-------|---------------------------|
+| Proposal  | In Progress | Team     | 9/13 | High     | Develop and Create Project Proposal  |
+|           |             |          |      |          |                                      |
+|           |             |          |      |          |                                      |
+|           |             |          |      |          |                                      |
+|           |             |          |      |          |                                      |
+|           |             |          |      |          |                                      |
+|           |             |          |      |          |                                      |
+|           |             |          |      |          |                                      |
+|           |             |          |      |          |                                      |
+|           |             |          |      |          |                                      |
+
+## Project Repo
+
+-    index.qmd - Project Write-Up
+
+-   presentation.pdf - Project Presentation Poster
+
+-   project.r - Project Code
+
+-   proposal.qmd - Project Proposal
