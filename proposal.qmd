@@ -20,33 +20,33 @@ execute:
 
 ## High Level Goal
 
-For Project 2, we want to explore the R package BrailleR. \
+For Project 2, we want to explore the R package BrailleR.\
 
 ## Description of Goals
 
 BrailleR is an R package that creates text descriptions of visualizations that visually impared users can more easily access via screen-readers than pure visualizations. We want to demonstrate how to use it and how it will be beneficial to users. The reason that we chose this data set is because accessibility and inclusion are important and being able to see a plot is something that a lot of individuals take for granted.
 
-In order to accomplish this, the data that we choose isn't particularly important and we are demonstrating a tool rather than showing trends of given data. As a result, we are going to use two different built-in Data sets. The first dataset is going to be Johnson and Johnson to create a time series plot. The second dataset is going to be **something** to create histogram and a regression plot. This will ensure that we have a variety of plots to showcase BrailleR capabilities.
+In order to accomplish this, the data that we choose isn't particularly important and we are demonstrating a tool rather than showing trends of given data. As a result, we are going to use different data sets that match the type of plot we want to create. In addition, these datasets may or may not be related since the content of the data is not as important as the ability for the data to be displayed with specific plot types. For these datasets, we are going to create three distinct plots each with different features and use BrailleR on the plot to show how it makes the visualization more accessible and what the text description looks like.
 
-For these datasets, we are going to create three distinct plots each with different features and use BrailleR on the plot to show how it makes the visualization more accessible and what the text description looks like. Depending on how the datasets display the data and the information they provide, we might need to alter the datasets we choose or the type of plots we make.
+The first dataset is going to be used to create a time series plot. The second dataset is going to be used to create histogram and a regression plot. This will ensure that we have a variety of plots to showcase BrailleR capabilities.
 
 ## Plan of Attack
 
 | Task Name                       | Status      | Assignee                 | Due  | Priority | Summary                                        |
-|-------------|---------------|----------------|--------|--|---------------------------|
+|-----------|-----------|-----------|-----------|-----------|-----------------|
 | Proposal                        | In Progress | Kapua w/ input from Team | 9/13 | High     | Develop and Create Project Proposal            |
-| Find dataset 1                  |             | Aditya                   | 9/13 | Mod      | Find dataset for Time Series                   |
+| Find dataset 1                  |             | Nikhil                   | 9/13 | Mod      | Find dataset for Time Series                   |
 | Find dataset 2                  |             | Tanmay/Krisha            | 9/13 | Mod      | Find dataset for histogram and Regression Plot |
-| Create Time Series Plot         |             | Aditya                   | 9/20 | High     |                                                |
+| Create Time Series Plot         |             | Nikhil                   | 9/20 | High     |                                                |
 | Create Histogram Plot           |             | Krisha                   | 9/20 | High     |                                                |
 | Create Regression Plot          |             | Tanmay                   | 9/20 | High     |                                                |
-| Incorporate BrailleR into Plots |             |                          | 9/24 | High     |                                                |
+| Incorporate BrailleR into Plots |             | Kapua                    | 9/24 | High     |                                                |
 |                                 |             |                          |      |          |                                                |
 |                                 |             |                          |      |          |                                                |
 
 ## Project Repo
 
--    index.qmd - Project Write-Up
+-   index.qmd - Project Write-Up
 
 -   presentation.pdf - Project Presentation Poster
 
