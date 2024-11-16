@@ -38,17 +38,19 @@ In order to accomplish this, we will use a a series of cherry picked data sets t
 
 ## Plan of Attack
 
-| Task Name                       | Status      | Assignee                 | Due  | Priority | Summary                                        |
+| Task Name               | Status      | Assignee                 | Due    | Priority | Summary                                          |
 |------------|------------|------------|------------|------------|------------|
-| Proposal                        | In Progress | Kapua w/ input from Team | 9/13 | High     | Develop and Create Project Proposal            |
-| Find dataset 1                  |             | Nikhil                   | 9/13 | Mod      | Find dataset for Time Series                   |
-| Find dataset 2                  |             | Tanmay/Krisha            | 9/13 | Mod      | Find dataset for histogram and Regression Plot |
-| Create Time Series Plot         |             | Nikhil                   | 9/20 | High     |                                                |
-| Create Histogram Plot           |             | Krisha                   | 9/20 | High     |                                                |
-| Create Regression Plot          |             | Tanmay                   | 9/20 | High     |                                                |
-| Incorporate BrailleR into Plots |             | Kapua                    | 9/24 | High     |                                                |
-|                                 |             |                          |      |          |                                                |
-|                                 |             |                          |      |          |                                                |
+| Proposal                | In Progress | Kapua w/ input from Team | Nov 13 | High     | Develop and Create Project Proposal              |
+| Find dataset 1          | Complete    | Nikhil                   | Nov 13 | Med      | Find dataset for all plots (except time series)  |
+| Find dataset 2          | Complete    | Tanmay/Krisha            | Nov 13 | Med      | Find dataset for Time Series                     |
+| Create Time Series Plot |             | Tanmay                   | Nov 20 | High     | Time Series of Gold Price                        |
+| Create Histogram Plot   |             | Nikhil                   | Nov 20 | High     | Histogram of gold for daily price changes        |
+| Create Regression Plot  |             | Tanmay                   | Nov 20 | High     | Regression of GDP and Happiness Score            |
+| Create Bar Plot         |             | Kapua                    | Nov 20 | High     | Bar Plot of Country and Happiness Score          |
+| Create Pie Chart        |             | Kapua                    | Nov 20 | High     | Country and perceptions of corruption            |
+| Create Heatmap          |             | Krisha                   | Nov 20 | High     | Correlation of numerical variables for happiness |
+| Write-Up                |             | Team                     | Dec 13 | High     |                                                  |
+| Poster                  |             | Team                     | Dec 01 | High     |                                                  |
 
 ## Project Repo
 
@@ -59,3 +61,13 @@ In order to accomplish this, we will use a a series of cherry picked data sets t
 -   project.r - Project Code
 
 -   proposal.qmd - Project Proposal
+
+-   readme.md
+
+-   data
+
+    -   Gold Prices.csv
+
+    -   world_happiness_report_2019.csv
+
+    -   readme.md
