@@ -20,20 +20,26 @@ execute:
 
 ## High Level Goal
 
-For Project 2, we want to explore the R package BrailleR.\
+For Project 2, we want to explore the R package BrailleR.
+
+## Research Question
+
+How effective of a tool is BrailleR in terms of accessibility for creating alternative text of plots created in R for visually impaired users?\
 
 ## Description of Goals
 
-BrailleR is an R package that creates text descriptions of visualizations that visually impared users can more easily access via screen-readers than pure visualizations. We want to demonstrate how to use it and how it will be beneficial to users. The reason that we chose this data set is because accessibility and inclusion are important and being able to see a plot is something that a lot of individuals take for granted.
+BrailleR is fairly new R package (released in 2023) that creates alternative text (text descriptions) AKA "alt text" of visualizations that visually impared users can more easily access via screen-readers than pure visualizations. We want to demonstrate how to use it as well as analyze how effective of an accessibility tool it is based on the quality of the alt text. The reason that we chose this data set is because accessibility and inclusion are important and being able to see a plot is something that a lot of individuals take for granted.
 
-In order to accomplish this, the data that we choose isn't particularly important and we are demonstrating a tool rather than showing trends of given data. As a result, we are going to use different data sets that match the type of plot we want to create. In addition, these datasets may or may not be related since the content of the data is not as important as the ability for the data to be displayed with specific plot types. For these datasets, we are going to create three distinct plots each with different features and use BrailleR on the plot to show how it makes the visualization more accessible and what the text description looks like.
+In order to accomplish this, we will use a a series of cherry picked data sets that easily translates to different types of plot of varying complexity.The goal is to use various plots such as bar plots, pie charts, histograms, regression plot, time series, and heatmaps. For each plot, BrailleR will be used to create alt text for it. Effective alt text should contain short and long descriptions, translations of data into appropriate descriptions, and limit search engine optimization word choice. Because of its relatively recent release, we expect BrailleR to not be able to create accessible alt text for all visualizations and want to highlight its current limitations.
 
-The first dataset is going to be used to create a time series plot. The second dataset is going to be used to create histogram and a regression plot. This will ensure that we have a variety of plots to showcase BrailleR capabilities.
+## Data Sets We Are Using and How
+
+-   Add the relevant information
 
 ## Plan of Attack
 
 | Task Name                       | Status      | Assignee                 | Due  | Priority | Summary                                        |
-|-----------|-----------|-----------|-----------|-----------|-----------------|
+|------------|------------|------------|------------|------------|------------|
 | Proposal                        | In Progress | Kapua w/ input from Team | 9/13 | High     | Develop and Create Project Proposal            |
 | Find dataset 1                  |             | Nikhil                   | 9/13 | Mod      | Find dataset for Time Series                   |
 | Find dataset 2                  |             | Tanmay/Krisha            | 9/13 | Mod      | Find dataset for histogram and Regression Plot |
