@@ -34,7 +34,21 @@ In order to accomplish this, we will use a a series of cherry picked data sets t
 
 ## Data Sets We Are Using and How
 
--   Add the relevant information
+We are utilizing the World Happiness Report dataset and the Gold Price dataset from Kaggle to create insightful visualizations through which we can explore the capabilities of BrailleR.
+
+Source for World Happiness Report dataset: <https://www.kaggle.com/datasets/unsdsn/world-happiness>
+
+Source for Gold Prices for 5 years: <https://www.kaggle.com/datasets/kusumakar/gold-prices-for-5-years-financial-predictions>
+
+-   For the regression plot, we are analyzing the relationship between GDP per capita and the Happiness Score, showcasing how economic prosperity influences happiness levels across countries.
+
+-   A bar plot highlights the Happiness Scores of various countries, providing a visual ranking.
+
+-   A pie chart to explore the relationship between countries and their perceptions of corruption.
+
+-   A correlation heatmap to visualize the relationship among the numerical variables representing the quality of life in different countries within the happiness data set. This includes the attributes: GDP per capita, Social support, Healthy life expectancy, Freedom to make life choices, Generosity, Perceptions of corruption
+
+-   Additionally, we are plotting a time series plot and histogram to illustrating trends and distributions in gold prices over time. For this purpose the attributes date and close will be used for the time series and attribute close will be used to plot the histogram.
 
 ## Plan of Attack
 
@@ -56,8 +70,6 @@ In order to accomplish this, we will use a a series of cherry picked data sets t
 
 -   index.qmd - Project Write-Up
 
--   presentation.pdf - Project Presentation Poster
-
 -   project.r - Project Code
 
 -   proposal.qmd - Project Proposal
@@ -71,3 +83,9 @@ In order to accomplish this, we will use a a series of cherry picked data sets t
     -   world_happiness_report_2019.csv
 
     -   readme.md
+
+-   Presentation
+
+    -   presentation.pdf - Project Presentation Poster
+
+    -   visualizations - images of the plots
