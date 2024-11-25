@@ -9,22 +9,90 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+HEATMAP:
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Using BrailleR:
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+library(tidyverse)
+library(BrailleR)
+library(ggplot2)
+library(reshape2)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+data <- read.csv("C:/INFO_526/project-2-4x4/data/world_happiness_report_2019.csv")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+colnames(data)
+```
+
+```{r}
+# Select numerical variables for correlation analysis
+selected_data <- data %>%
+  select(
+    "GDP.per.capita", 
+    "Social.support", 
+    "Healthy.life.expectancy", 
+    "Freedom.to.make.life.choices", 
+    "Generosity", 
+    "Perceptions.of.corruption"
+  )
+
+# Calculate the correlation matrix
+cor_matrix <- cor(selected_data, use = "complete.obs")
+
+# Transform correlation matrix for heatmap plotting
+tran_cor_matrix <- melt(cor_matrix)
+```
+
+```{r}
+# Heatmap using BrailleR
+heatmap_plot <- ggplot(data = tran_cor_matrix, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+                       midpoint = 0, limit = c(-1, 1), space = "Lab", 
+                       name = "Correlation") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
+  labs(title = "Correlation Heatmap", x = "Attributes", y = "Attributes")
+
+# Print the heatmap with BrailleR
+VI(heatmap_plot)
+```
+
+```{r}
+# Calculate and print a summary of the strongest and weakest correlations
+summary_text <- function(cor_matrix) {
+  strongest <- which(cor_matrix == max(cor_matrix[cor_matrix < 1]), arr.ind = TRUE)
+  weakest <- which(cor_matrix == min(cor_matrix), arr.ind = TRUE)
+  cat("Strongest correlation:", rownames(cor_matrix)[strongest[1]], "and",
+      colnames(cor_matrix)[strongest[2]], "=", max(cor_matrix[cor_matrix < 1]), "\n")
+  cat("Weakest correlation:", rownames(cor_matrix)[weakest[1]], "and",
+      colnames(cor_matrix)[weakest[2]], "=", min(cor_matrix), "\n")
+}
+
+# Print the summary
+summary_text(cor_matrix)
+```
+
+Using regular ggplot2:
+```{r}
+# Create the heatmap
+heatmap_plot <- ggplot(data = tran_cor_matrix, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+                       midpoint = 0, limit = c(-1, 1), space = "Lab", 
+                       name = "Correlation") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
+  labs(title = "Correlation Heatmap", x = "Attributes", y = "Attributes")
+
+print(heatmap_plot)
+
+```
+
+The BrailleR package provides basic information about the plot such as the title, axis and legend description. It explains the range of correlation values and their mapping to colors, giving some sense of the data. But the VI functionality of BrailleR is not capable of processing the tile based data in heatmaps. It only summarizes the metadata and omits the main information. This limitation arises because heatmap is composed of tiles with colors representing values. The VI() function cannot generate meaningful descriptions for this style of visualization because the visual-to-text mapping isn't straightforward.Manual intervention is required to write the supplementary code to extract insights such as strongest and weakest correlations.
+This makes BrailleR inconvenient for heatmaps, as it does not fully represent the information on the plot in textual format for the visually impaired.
+
