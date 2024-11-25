@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+Yesknitr::opts_chunk$set(echo = TRUE)
 ```
 
 HEATMAP:
@@ -21,7 +21,7 @@ library(reshape2)
 ```
 
 ```{r}
-data <- read.csv("C:/INFO_526/project-2-4x4/data/world_happiness_report_2019.csv")
+data <- read.csv("https://raw.githubusercontent.com/INFO-526-FA24/project-2-4x4/refs/heads/main/data/world_happiness_report_2019.csv")
 ```
 
 ```{r}
@@ -78,6 +78,7 @@ summary_text(cor_matrix)
 ```
 
 Using regular ggplot2:
+
 ```{r}
 # Create the heatmap
 heatmap_plot <- ggplot(data = tran_cor_matrix, aes(x = Var1, y = Var2, fill = value)) +
@@ -93,6 +94,4 @@ print(heatmap_plot)
 
 ```
 
-The BrailleR package provides basic information about the plot such as the title, axis and legend description. It explains the range of correlation values and their mapping to colors, giving some sense of the data. But the VI functionality of BrailleR is not capable of processing the tile based data in heatmaps. It only summarizes the metadata and omits the main information. This limitation arises because heatmap is composed of tiles with colors representing values. The VI() function cannot generate meaningful descriptions for this style of visualization because the visual-to-text mapping isn't straightforward.Manual intervention is required to write the supplementary code to extract insights such as strongest and weakest correlations.
-This makes BrailleR inconvenient for heatmaps, as it does not fully represent the information on the plot in textual format for the visually impaired.
-
+The BrailleR package provides basic information about the plot such as the title, axis and legend description. It explains the range of correlation values and their mapping to colors, giving some sense of the data. But the VI functionality of BrailleR is not capable of processing the tile based data in heatmaps. It only summarizes the metadata and omits the main information. This limitation arises because heatmap is composed of tiles with colors representing values. The VI() function cannot generate meaningful descriptions for this style of visualization because the visual-to-text mapping isn't straightforward.Manual intervention is required to write the supplementary code to extract insights such as strongest and weakest correlations. This makes BrailleR inconvenient for heatmaps, as it does not fully represent the information on the plot in textual format for the visually impaired.
