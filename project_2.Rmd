@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-Yesknitr::opts_chunk$set(echo = TRUE)
+#Yesknitr::opts_chunk$set(echo = TRUE)
 ```
 
 HEATMAP:
@@ -95,3 +95,37 @@ print(heatmap_plot)
 ```
 
 The BrailleR package provides basic information about the plot such as the title, axis and legend description. It explains the range of correlation values and their mapping to colors, giving some sense of the data. But the VI functionality of BrailleR is not capable of processing the tile based data in heatmaps. It only summarizes the metadata and omits the main information. This limitation arises because heatmap is composed of tiles with colors representing values. The VI() function cannot generate meaningful descriptions for this style of visualization because the visual-to-text mapping isn't straightforward.Manual intervention is required to write the supplementary code to extract insights such as strongest and weakest correlations. This makes BrailleR inconvenient for heatmaps, as it does not fully represent the information on the plot in textual format for the visually impaired.
+
+```{r}
+#Bar Plot
+
+top_bottom_countries <- data %>%
+  arrange(desc(Score)) %>%           
+  slice_head(n = 10) %>%              
+  bind_rows(data %>%
+              arrange(Score) %>%       
+              slice_head(n = 10))
+
+bar_plot <- ggplot(top_bottom_countries, aes(x = reorder(Country.or.region, Score), y = Score)) +
+  geom_bar(stat = "identity", fill = "darkolivegreen4") +
+  coord_flip() + 
+  labs(title = "Happiness Index Score",
+       subtitle = "Top 10 and Bottom 10 Ranking Countries",
+       x = "Country",
+       y = "Happiness Score") +
+  scale_y_continuous(
+    breaks = seq(0, 8, by = .5),
+    expand = c(0, 0)
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank()
+  )
+
+print(bar_plot)
+
+```
+
+Once again, the BrailleR package provides basic information about the plot such as the title, subtitle, axis and coloring. It says what countries are being plotted, but not what the specific values of the plot have, meaning that while a user might know what the plot is displaying and how, they wouldn't know what the actual data is. In addition, the descriptions of the format of the plot are confusing. BrailleR successfully recognizes that the axis are flipped, meaning that the x-axis is on the veritcal axis and the y is on the horizontal, but its language and descriptions switch between the standard display and the flipped display.
+

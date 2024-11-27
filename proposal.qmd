@@ -53,7 +53,7 @@ Source for Gold Prices for 5 years: <https://www.kaggle.com/datasets/kusumakar/g
 ## Plan of Attack
 
 | Task Name               | Status      | Assignee                 | Due    | Priority | Summary                                          |
-|------------|------------|------------|------------|------------|------------|
+|-------------------------|-------------|--------------------------|--------|----------|--------------------------------------------------|
 | Proposal                | In Progress | Kapua w/ input from Team | Nov 13 | High     | Develop and Create Project Proposal              |
 | Find dataset 1          | Complete    | Nikhil                   | Nov 13 | Med      | Find dataset for all plots (except time series)  |
 | Find dataset 2          | Complete    | Tanmay/Krisha            | Nov 13 | Med      | Find dataset for Time Series                     |
