@@ -96,6 +96,7 @@ print(heatmap_plot)
 
 The BrailleR package provides basic information about the plot such as the title, axis and legend description. It explains the range of correlation values and their mapping to colors, giving some sense of the data. But the VI functionality of BrailleR is not capable of processing the tile based data in heatmaps. It only summarizes the metadata and omits the main information. This limitation arises because heatmap is composed of tiles with colors representing values. The VI() function cannot generate meaningful descriptions for this style of visualization because the visual-to-text mapping isn't straightforward.Manual intervention is required to write the supplementary code to extract insights such as strongest and weakest correlations. This makes BrailleR inconvenient for heatmaps, as it does not fully represent the information on the plot in textual format for the visually impaired.
 
+
 ```{r}
 #Bar Plot
 
@@ -128,4 +129,37 @@ print(bar_plot)
 ```
 
 Once again, the BrailleR package provides basic information about the plot such as the title, subtitle, axis and coloring. It says what countries are being plotted, but not what the specific values of the plot have, meaning that while a user might know what the plot is displaying and how, they wouldn't know what the actual data is. In addition, the descriptions of the format of the plot are confusing. BrailleR successfully recognizes that the axis are flipped, meaning that the x-axis is on the veritcal axis and the y is on the horizontal, but its language and descriptions switch between the standard display and the flipped display.
+
+
+```{r}
+#Pie Chart
+
+library(RColorBrewer)
+
+data <- data.frame(
+  category = c("Under 5", "5-17", "18-24", "25-34", "35-44", "45-64", "65-84", "85 and over"),
+  value = c(5.6, 16.5, 9.4, 13.5, 12.7, 25.4, 14.9, 1.91)
+)
+
+colors <- brewer.pal(length(unique(data$category)), "Set2")
+
+data$category <- factor(data$category, levels = data$category)
+
+data$fraction = data$value / sum(data$value)
+data$percentage = round(data$fraction * 100, 1)
+
+ggplot(data, aes(x = "", y = value, fill = category)) +
+  geom_bar(stat = "identity", width = 1, color = "black") +
+  coord_polar(theta = "y") +
+  labs(title = "Age Groups in the United States", fill = "Category",
+       caption="According to the 2020 US Census") +
+  geom_text(aes(label = ifelse(percentage >= 6, paste(percentage, "%"), "")),
+            position = position_stack(vjust = .5),
+            color = "white", size = 5) +
+  scale_fill_manual(values = colors) +
+  theme_void() 
+
+```
+
+BrailleR does not properly portray pie charts for users. It provides information on the title, subtitle, and legend as well as describes the colors of each of the segments. However, the text description does not properly explain what the data is or what the data is showing. Reading the text description, it deeply goes into the construction of the plot and more technical aspects of how it was constructed which does not give blind users access to what the plot is showing.
 
