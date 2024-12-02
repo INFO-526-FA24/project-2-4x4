@@ -57,9 +57,9 @@ Source for Gold Prices for 5 years: <https://www.kaggle.com/datasets/kusumakar/g
 | Proposal                | In Progress | Kapua w/ input from Team | Nov 13 | High     | Develop and Create Project Proposal              |
 | Find dataset 1          | Complete    | Nikhil                   | Nov 13 | Med      | Find dataset for all plots (except time series)  |
 | Find dataset 2          | Complete    | Tanmay/Krisha            | Nov 13 | Med      | Find dataset for Time Series                     |
-| Create Time Series Plot |             | Tanmay                   | Nov 20 | High     | Time Series of Gold Price                        |
-| Create Histogram Plot   |             | Nikhil                   | Nov 20 | High     | Histogram of gold for daily price changes        |
-| Create Regression Plot  |             | Tanmay                   | Nov 20 | High     | Regression of GDP and Happiness Score            |
+| Create Time Series Plot | Completed   | Tanmay                   | Nov 20 | High     | Time Series of Gold Price                        |
+| Create Histogram Plot   | Completed   | Nikhil                   | Nov 20 | High     | Histogram of gold for daily price changes        |
+| Create Regression Plot  | Completed   | Tanmay                   | Nov 20 | High     | Regression of GDP and Happiness Score            |
 | Create Bar Plot         | Completed   | Kapua                    | Nov 20 | High     | Bar Plot of Country and Happiness Score          |
 | Create Pie Chart        | Completed   | Kapua                    | Nov 20 | High     | Statistics of US Age Groups                      |
 | Create Heatmap          |             | Krisha                   | Nov 20 | High     | Correlation of numerical variables for happiness |
