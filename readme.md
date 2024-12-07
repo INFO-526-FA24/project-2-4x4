@@ -1,0 +1,78 @@
+#Evaluating BrailleR and its effective usage
+
+###BrailleR intro
+BrailleR is a relatively new R package, released in 2023, designed to improve accessibility to the R programming environment for blind and visually impaired users. The package enhances usability by converting visual outputs, such as plots, into text-based descriptions (alt-text) that can be accessed through screen readers.
+
+The aim of our project is to demonstrate the functionality of BrailleR and evaluate its effectiveness and accessibility by assessing the quality of the alt-text it generates. To achieve this, we will create and analyze alt-text for several commonly used visualizations, including bar plots, pie charts, histograms, and heatmaps. Effective alt-text should provide both concise and detailed descriptions, accurately translate visual data into meaningful text, and avoid excessive use of keywords optimized for search engines.
+
+###Dataset
+We will be using two different datasets, namely, the World Happiness Report dataset and the Gold Price dataset from Kaggle to create insightful visualizations through which we can explore the capabilities of BrailleR.
+
+The World Happiness Report Dataset contains data from the World Happiness Report, which measures global happiness levels based on survey responses and socio-economic indicators.  The dataset provides valuable insights into the well-being of populations across different countries and regions, enabling analyses of trends and comparisons in happiness levels worldwide. This dataset has 156 unique values and 8 attributes. The different attributes are as below:
+| **Column Name**             | **Data Type** | **Description**                                                                 |
+|------------------------------|---------------|---------------------------------------------------------------------------------|
+| `Overall rank`              | Integer       | The overall ranking of the country based on the happiness score.               |
+| `Country or region`         | Character     | The name of the country or region.                                             |
+| `Score`                     | Numeric       | The average happiness score for the country (on a scale of 0-10).              |
+| `GDP per capita`            | Numeric       | The GDP per capita, representing economic prosperity.                          |
+| `Social support`            | Numeric       | Measure of social support from family and friends.                             |
+| `Healthy life expectancy`   | Numeric       | The average life expectancy adjusted for health.                               |
+| `Freedom to make life choices` | Numeric    | The perceived freedom of individuals to make life choices.                     |
+| `Generosity`                | Numeric       | Measure of altruistic behavior within the population.                          |
+| `Perceptions of corruption` | Numeric       | The perceived level of corruption in government and businesses (lower is better).|
+
+Source for World Happiness Report dataset: https://www.kaggle.com/datasets/unsdsn/world-happiness
+
+
+The Gold Price dataset contains historical data on gold prices over five years. This dataset is useful for financial analysis, time-series forecasting, and studying price trends in the gold market. It has 1,256 rows of data representing daily trading data over five years and 9 attributes which are as follows:
+| **Column Name**     | **Data Type** | **Description**                                                                |
+|----------------------|---------------|--------------------------------------------------------------------------------|
+| `Date`               | Date          | The trading date for the given data entry.                                      |
+| `Open`               | Numeric       | The opening price of gold for that specific trading day.                        |
+| `High`               | Numeric       | The highest price of gold reached during the trading day.                      |
+| `Low`                | Numeric       | The lowest price of gold recorded during the trading day.                      |
+| `Close`              | Numeric       | The closing price of gold for that specific trading day.                        |
+| `Volume`             | Numeric       | The total trading volume of gold for that specific day.                         |
+| `Dividends`          | Numeric       | The dividends paid (if applicable), usually for stock-based investments (might be zero for gold). |
+| `Stock Splits`       | Numeric       | The number of stock splits (if applicable; generally not relevant for gold prices).|
+| `Capital Gains`      | Numeric       | The capital gains earned on gold investments (typically zero for raw gold prices). |
+
+Source for Gold Prices for 5 years: https://www.kaggle.com/datasets/kusumakar/gold-prices-for-5-years-financial-predictions
+
+##Visualizations
+The following is a list of the visualizations, that will be used do decide teh effectiveness of the BrailleR, we have ensured to include the simplest to more complex types of plots to give a better and unbiased outlook.
+
+1. Regression plot - We will analyze the relationship between GDP per capita and the Happiness Score, showcasing how economic prosperity influences happiness levels across countries.
+
+2. Bar plot - Highlights the Happiness Scores of various countries, providing a visual ranking.
+
+3. Pie chart - To explore the relationship between countries and their perceptions of corruption.
+
+4. Correlation Heatmap - To visualize the relationship among the numerical variables representing the quality of life in different countries within the happiness data set. This includes the attributes: GDP per capita, Social support, Healthy life expectancy, Freedom to make life choices, Generosity, Perceptions of corruption
+
+5. Time Series plot - To illustrate the trends and distributions in gold prices over time. For this purpose the attributes date and close will be used.
+
+6. Histogram - To illustrate the trends and distributions in gold prices over time. For this purpose the attributes close will be used.
+
+###Inference for each of the plots
+
+#####Correlation Heatmap:
+The BrailleR package provides basic information about the plot such as the title, axis and legend description. It explains the range of correlation values and their mapping to colors, giving some sense of the data. But the VI functionality of BrailleR is not capable of processing the tile based data in heatmaps. It only summarizes the metadata and omits the main information. This limitation arises because heatmap is composed of tiles with colors representing values. The VI() function cannot generate meaningful descriptions for this style of visualization because the visual-to-text mapping isn't straightforward.Manual intervention is required to write the supplementary code to extract insights such as strongest and weakest correlations. This makes BrailleR inconvenient for heatmaps, as it does not fully represent the information on the plot in textual format for the visually impaired.
+
+#####Barplot:
+Once again, the BrailleR package provides basic information about the plot such as the title, subtitle, axis and coloring. It says what countries are being plotted, but not what the specific values of the plot have, meaning that while a user might know what the plot is displaying and how, they wouldn't know what the actual data is. In addition, the descriptions of the format of the plot are confusing. BrailleR successfully recognizes that the axis are flipped, meaning that the x-axis is on the veritcal axis and the y is on the horizontal, but its language and descriptions switch between the standard display and the flipped display.
+
+#####Pie chart: 
+BrailleR does not properly portray pie charts for users. It provides information on the title, subtitle, and legend as well as describes the colors of each of the segments. However, the text description does not properly explain what the data is or what the data is showing. Reading the text description, it deeply goes into the construction of the plot and more technical aspects of how it was constructed which does not give blind users access to what the plot is showing.
+
+#####Timeseries plot:
+For Time Series plot the BrailleR fails to interpret even the basic aspects of the plot such as the x-axis, though the interpretation of title, layer and color with the number of total observations. By creating the custom summary function and summarizing it using BrailleR provides the statistical details about the variables such start_price, End_price, Average_price and other, this only goes deep into statistical details which are not useful enough to give blind users access to what the plot is showing.
+
+#####Regression plot:
+It provides basic information about the plot such as the title, axis, layer information and coloring. While used with underlying linear model that represents the plot provides statistical details like significance level, estimate and p-value. Here the significance of 1% represents strong statistical significanec, suggesting that the relationship is highly unlikely to be due to random chance. Estimate value represents the slope of the regression line. For every 1 unit increase in GDP per capita, the Happiness Score is expected to increase by 2.22 units on average.A positive estimate means there is a positive relationship: higher GDP per capita is associated with higher happiness scores. The p-value is extremely small, close to 0, which indicates a very strong likelihood that this relationship is real and not due to random variation in the data.
+
+#####Histogram:
+For the Histogram, using BrailleR summary function provides the statistical details about the Daily change in gold_prices which highlights The largest negative daily change as 10.209$, 25% of daily changes are below -0.82 USD, The middle value, indicating half of the daily changes are above and half are below 0.10 USD, On average, daily price changes are slightly positive and The largest positive daily change is 7.09 USD. While the VI(gold_histogram) function provides basic information about such as title, axis, color and details about the bars. 
+
+###Conclusion
+BrailleR is a tool that has the potential to be extremely useful in terms of accessibility. However, it is still in its early stages of development and still has a long way to go to be a reliable tool.While it provides basic information such as titles, axis labels, and legends for various types of plots, its capacity to fully convey the underlying data and insights is inconsistent across visualization types.
