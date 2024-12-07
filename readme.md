@@ -1,4 +1,4 @@
-#Evaluating BrailleR and its effective usage
+Evaluating BrailleR and its effective usage
 
 ###BrailleR intro
 BrailleR is a relatively new R package, released in 2023, designed to improve accessibility to the R programming environment for blind and visually impaired users. The package enhances usability by converting visual outputs, such as plots, into text-based descriptions (alt-text) that can be accessed through screen readers.
