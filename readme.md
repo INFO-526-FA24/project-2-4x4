@@ -39,40 +39,19 @@ The Gold Price dataset contains historical data on gold prices over five years. 
 
 Source for Gold Prices for 5 years: https://www.kaggle.com/datasets/kusumakar/gold-prices-for-5-years-financial-predictions
 
-##Visualizations
-The following is a list of the visualizations, that will be used do decide teh effectiveness of the BrailleR, we have ensured to include the simplest to more complex types of plots to give a better and unbiased outlook.
+###Project Repository Structure
 
-1. Regression plot - We will analyze the relationship between GDP per capita and the Happiness Score, showcasing how economic prosperity influences happiness levels across countries.
+1. data: 
+  Gold Prices.csv
+  world_happiness_report_2019.csv
+  
+2. index.qmd - Project Write-Up
 
-2. Bar plot - Highlights the Happiness Scores of various countries, providing a visual ranking.
+3. project_2.Rmd - Project Code
 
-3. Pie chart - To explore the relationship between countries and their perceptions of corruption.
+4. proposal.qmd - Project Proposal
 
-4. Correlation Heatmap - To visualize the relationship among the numerical variables representing the quality of life in different countries within the happiness data set. This includes the attributes: GDP per capita, Social support, Healthy life expectancy, Freedom to make life choices, Generosity, Perceptions of corruption
+5. readme.md
 
-5. Time Series plot - To illustrate the trends and distributions in gold prices over time. For this purpose the attributes date and close will be used.
+6. presentation.pdf - Project Presentation Poster
 
-6. Histogram - To illustrate the trends and distributions in gold prices over time. For this purpose the attributes close will be used.
-
-###Inference for each of the plots
-
-#####Correlation Heatmap:
-The BrailleR package provides basic information about the plot such as the title, axis and legend description. It explains the range of correlation values and their mapping to colors, giving some sense of the data. But the VI functionality of BrailleR is not capable of processing the tile based data in heatmaps. It only summarizes the metadata and omits the main information. This limitation arises because heatmap is composed of tiles with colors representing values. The VI() function cannot generate meaningful descriptions for this style of visualization because the visual-to-text mapping isn't straightforward.Manual intervention is required to write the supplementary code to extract insights such as strongest and weakest correlations. This makes BrailleR inconvenient for heatmaps, as it does not fully represent the information on the plot in textual format for the visually impaired.
-
-#####Barplot:
-Once again, the BrailleR package provides basic information about the plot such as the title, subtitle, axis and coloring. It says what countries are being plotted, but not what the specific values of the plot have, meaning that while a user might know what the plot is displaying and how, they wouldn't know what the actual data is. In addition, the descriptions of the format of the plot are confusing. BrailleR successfully recognizes that the axis are flipped, meaning that the x-axis is on the veritcal axis and the y is on the horizontal, but its language and descriptions switch between the standard display and the flipped display.
-
-#####Pie chart: 
-BrailleR does not properly portray pie charts for users. It provides information on the title, subtitle, and legend as well as describes the colors of each of the segments. However, the text description does not properly explain what the data is or what the data is showing. Reading the text description, it deeply goes into the construction of the plot and more technical aspects of how it was constructed which does not give blind users access to what the plot is showing.
-
-#####Timeseries plot:
-For Time Series plot the BrailleR fails to interpret even the basic aspects of the plot such as the x-axis, though the interpretation of title, layer and color with the number of total observations. By creating the custom summary function and summarizing it using BrailleR provides the statistical details about the variables such start_price, End_price, Average_price and other, this only goes deep into statistical details which are not useful enough to give blind users access to what the plot is showing.
-
-#####Regression plot:
-It provides basic information about the plot such as the title, axis, layer information and coloring. While used with underlying linear model that represents the plot provides statistical details like significance level, estimate and p-value. Here the significance of 1% represents strong statistical significanec, suggesting that the relationship is highly unlikely to be due to random chance. Estimate value represents the slope of the regression line. For every 1 unit increase in GDP per capita, the Happiness Score is expected to increase by 2.22 units on average.A positive estimate means there is a positive relationship: higher GDP per capita is associated with higher happiness scores. The p-value is extremely small, close to 0, which indicates a very strong likelihood that this relationship is real and not due to random variation in the data.
-
-#####Histogram:
-For the Histogram, using BrailleR summary function provides the statistical details about the Daily change in gold_prices which highlights The largest negative daily change as 10.209$, 25% of daily changes are below -0.82 USD, The middle value, indicating half of the daily changes are above and half are below 0.10 USD, On average, daily price changes are slightly positive and The largest positive daily change is 7.09 USD. While the VI(gold_histogram) function provides basic information about such as title, axis, color and details about the bars. 
-
-###Conclusion
-BrailleR is a tool that has the potential to be extremely useful in terms of accessibility. However, it is still in its early stages of development and still has a long way to go to be a reliable tool.While it provides basic information such as titles, axis labels, and legends for various types of plots, its capacity to fully convey the underlying data and insights is inconsistent across visualization types.
