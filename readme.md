@@ -1,11 +1,11 @@
-#Evaluating BrailleR and its effective usage
+# Evaluating BrailleR and its effective usage
 
-###BrailleR intro
+### BrailleR intro
 BrailleR is a relatively new R package, released in 2023, designed to improve accessibility to the R programming environment for blind and visually impaired users. The package enhances usability by converting visual outputs, such as plots, into text-based descriptions (alt-text) that can be accessed through screen readers.
 
 The aim of our project is to demonstrate the functionality of BrailleR and evaluate its effectiveness and accessibility by assessing the quality of the alt-text it generates. To achieve this, we will create and analyze alt-text for several commonly used visualizations, including bar plots, pie charts, histograms, and heatmaps. Effective alt-text should provide both concise and detailed descriptions, accurately translate visual data into meaningful text, and avoid excessive use of keywords optimized for search engines.
 
-###Dataset
+### Dataset
 We will be using two different datasets, namely, the World Happiness Report dataset and the Gold Price dataset from Kaggle to create insightful visualizations through which we can explore the capabilities of BrailleR.
 
 The World Happiness Report Dataset contains data from the World Happiness Report, which measures global happiness levels based on survey responses and socio-economic indicators.  The dataset provides valuable insights into the well-being of populations across different countries and regions, enabling analyses of trends and comparisons in happiness levels worldwide. This dataset has 156 unique values and 8 attributes. The different attributes are as below:
@@ -39,7 +39,7 @@ The Gold Price dataset contains historical data on gold prices over five years. 
 
 Source for Gold Prices for 5 years: https://www.kaggle.com/datasets/kusumakar/gold-prices-for-5-years-financial-predictions
 
-###Project Repository Structure
+### Project Repository Structure
 
 1. data: 
   Gold Prices.csv
